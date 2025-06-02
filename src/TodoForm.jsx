@@ -24,9 +24,9 @@ export default function TodoForm({ addTodo }) {
             <form onSubmit={handleSubmit}>
                 <TextField
                     id="outlined-basic"
-                    label="Todo"
+                    label="What will I do?"
                     variant="outlined"
-                    placeholder='What will I do?'
+                    placeholder="Todo"
                     value={text}
                     onChange={handleChange}
                     InputProps={
