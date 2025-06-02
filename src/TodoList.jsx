@@ -1,6 +1,7 @@
 import List from '@mui/material/List';
 import { useState } from 'react';
 import TodoItem from './TodoItem';
+import TodoForm from './TodoForm';
 
 const initialTodos = [
     {
@@ -49,6 +50,19 @@ export default function TodoList() {
         })
     }
 
+    const addTodo = (txt) => {
+        setTodos(curTodos => {
+            return [
+                ...curTodos,
+                {
+                    id: 8,
+                    text: txt,
+                    completed: false
+                }
+            ]
+        })
+    }
+
     return (
         <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
             {todos.map(todo => (
@@ -59,6 +73,7 @@ export default function TodoList() {
                     toggleTodo={toggleTodo}
                 />
             ))}
+            <TodoForm addTodo={addTodo} />
         </List>
     )
 }
